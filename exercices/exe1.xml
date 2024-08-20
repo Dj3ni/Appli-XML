@@ -1,0 +1,133 @@
+<!-- Exe 1: Réalisez un document XML représentant une liste de livres.
+● Chaque livre a un titre, un auteur (juste le nom/prénom), un genre et une date
+de publication.
+● Extra : Si le livre est le 2ième d’une série, on doit pouvoir retrouver le premier. -->
+
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!-- <!DOCTYPE Witcher_Saga [
+    ...
+]> -->
+
+<Witcher_Saga>
+    <author>
+        <firstName>Andrzej</firstName>
+        <name>Sapkowski</name>
+    </author>
+    <editor>Bragelonne</editor>
+    <traductor>Laurence Dyèvre</traductor>
+    <type>fantasy</type>
+    <books>
+        <LivreI>
+            <title>Le Dernier Voeu</title>
+            <!-- Première manière de faire -->
+            <publicationDate>
+                <day></day>
+                <month></month>
+                <year>2003</year>
+            </publicationDate>
+        </LivreI>
+        <LivreII>
+            <title>L'Epee de la Providence</title>
+            <!-- Deuxième manière, attention à préciser le format! -->
+            <publicationDate format ="dd/mm/yyyy">01/2008</publicationDate>
+        </LivreII>
+        <LivreIII>
+            <title>Le Sang des elfes</title>
+            <publicationDate></publicationDate>
+        </LivreIII>
+        <LivreIV>
+            <title>Le Temps du Mépris</title>
+            <publicationDate></publicationDate>
+        </LivreIV>
+        <LivreV>
+            <title>Le Baptême du feu</title>
+            <publicationDate></publicationDate>
+        </LivreV>
+        <LivreVI>
+            <title>La Tour de l'Hirondelle</title>
+            <publicationDate></publicationDate>
+        </LivreVI>
+        <LivreVII>
+            <title>La Dame du Lac</title>
+            <publicationDate></publicationDate>
+        </LivreVII> 
+</books>
+</Witcher_Saga>
+
+<!-- Correction 1: Mettre les infos dans la balise saga, meilleure version-->
+
+<livres>
+    <livre>
+        <saga>
+            <title>Harry Potter</title>
+            <tome>1</tome>
+        </saga>
+        <title>Harry Potter à l'école des Sorciers</title>
+            <publicationDate "dd/mm/yyyy">20/08/2024</publicationDate>
+            <type>fantasy</type>
+            <author>
+                <firstName>J.K</firstName>
+                <name>Rowling</name>
+            </author>
+    </livre>
+    <livre>
+        <saga/>
+        <title>Léon le Moucheron</title>
+            <publicationDate "dd/mm/yyyy">20/08/2024</publicationDate>
+            <type>Enfance</type>
+            <author>
+                <firstName>Samuel</firstName>
+                <name>Legrain</name>
+            </author>
+    </livre>
+</livres>
+
+<!-- Correction 2 : mettre les infos de saga dans les attributs, très bonne solution car ce sont des métadonnées-->
+
+<livres>
+    <livre series-name="Harry Potter" tome="1">
+        <title>Harry Potter à l'école des Sorciers</title>
+        <publicationDate "dd/mm/yyyy">20/08/2024</publicationDate>
+        <type>fantasy</type>
+        <author>
+            <firstName>J.K</firstName>
+            <name>Rowling</name>
+        </author>
+    </livre>
+    <livre>
+        <title>Léon le Moucheron</title>
+            <publicationDate "dd/mm/yyyy">20/08/2024</publicationDate>
+            <type>Enfance</type>
+            <author>
+                <firstName>Samuel</firstName>
+                <name>Legrain</name>
+            </author>
+    </livre>
+</livres>
+
+<!-- Correction 3: attention correct mais très peu utilisé car complexifie la structure (mélange de livres et de sagas) -->
+
+<livres>
+    <saga>
+        Harry Potter
+        <livre1>
+            <title>Harry Potter à l'école des Sorciers</title>
+            <publicationDate "dd/mm/yyyy">20/08/2024</publicationDate>
+            <type>fantasy</type>
+            <author>
+                <firstName>J.K.</firstName>
+                <name>Rowling</name>
+            </author>
+        </livre1>
+    </saga>
+    <livre>
+        <title>Léon le Moucheron</title>
+            <publicationDate "dd/mm/yyyy">20/08/2024</publicationDate>
+            <type>Enfance</type>
+            <author>
+                <firstName>Samuel</firstName>
+                <name>Legrain</name>
+            </author>
+    </livre>
+</livres>

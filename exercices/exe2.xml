@@ -1,0 +1,41 @@
+<!-- EXE 2
+On veut créer un document XML structurant les données d'un annuaire
+téléphonique.
+L’annuaire doit comprendre au moins 2 personnes. Pour chaque personne, on
+souhaite connaître les informations suivantes :
+○ Son sexe (homme ou femme).
+○ Son nom.
+○ Son prénom.
+○ Son adresse.
+○ Un ou plusieurs numéros de téléphone (téléphone portable, fixe, bureau, etc.).
+○ Une ou plusieurs adresses e-mail (adresse personnelle, professionnelle, etc.) -->
+
+<?xml version="1.1" encoding="UTF-8"?>
+<!-- <!DOCTYPE Repertory [
+    ...
+]> -->
+
+<Repertory>
+    <Person>
+        <Name>Paulus</Name>
+        <FirstName>Aurélien</FirstName>
+        <Sexe>M</Sexe>
+        <Address>Rue de l&apos;Eglise,3 à 1000 Bruxelles</Address>
+        <PhoneNumber name="Private">0474/123.456</PhoneNumber>
+        <PhoneNumber name="Office">0474/456.789</PhoneNumber>
+        <Email name="Private"></Email>
+        <Email name="Office"></Email>
+        <Birthday>17/08/1988</Birthday>
+    </Person>
+    <Person>
+        <Name>Fernandez Garcia</Name>
+        <FirstName>Jenny</FirstName>
+        <Sexe>F</Sexe>
+        <Address>Rue de l&apos;Eglise,3 à 1000 Bruxelles</Address>
+        <PhoneNumber name="Private">0479/123.456</PhoneNumber>
+        <PhoneNumber name="Office">0475/456.789</PhoneNumber>
+        <Email name="Private">jenny@example.com</Email>
+        <Email name="Office">jenny.office@example.com</Email>
+        <Birthday>28/04/1989</Birthday>
+    </Person>
+</Repertory>

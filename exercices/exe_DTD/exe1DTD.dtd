@@ -1,0 +1,10 @@
+<!ELEMENT Witcher_Saga (author, editor, traductor?, type, books)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT editor (#PCDATA)>
+<!ELEMENT traductor (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT books (Livre+)>
+<!ATTLIST Livre tome ID #REQUIRED>
+<!ELEMENT Livre (title, publicationDate?)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publicationDate (#PCDATA)>

@@ -3,11 +3,9 @@
 de publication.
 ● Extra : Si le livre est le 2ième d’une série, on doit pouvoir retrouver le premier. -->
 
-<?xml version="1.1" encoding="UTF-8"?>
+<?xml version="1.1" encoding="UTF-8" standalone = "no"?>
 
-<!-- <!DOCTYPE Witcher_Saga [
-    ...
-]> -->
+<!DOCTYPE Witcher_Saga SYSTEM "./exe_DTD/exe1DTD.dtd">
 
 <Witcher_Saga>
     <author>
@@ -18,7 +16,7 @@ de publication.
     <traductor>Laurence Dyèvre</traductor>
     <type>fantasy</type>
     <books>
-        <LivreI>
+        <Livre tome = "I">
             <title>Le Dernier Voeu</title>
             <!-- Première manière de faire -->
             <publicationDate>
@@ -26,33 +24,33 @@ de publication.
                 <month></month>
                 <year>2003</year>
             </publicationDate>
-        </LivreI>
-        <LivreII>
-            <title>L'Epee de la Providence</title>
+        </Livre>
+        <Livre tome = "II">
+            <title>L&apos;Epee de la Providence</title>
             <!-- Deuxième manière, attention à préciser le format! -->
             <publicationDate format ="dd/mm/yyyy">01/2008</publicationDate>
-        </LivreII>
-        <LivreIII>
+        </Livre>
+        <Livre tome = "III">
             <title>Le Sang des elfes</title>
             <publicationDate></publicationDate>
-        </LivreIII>
-        <LivreIV>
+        </Livre>
+        <Livre tome = "IV">
             <title>Le Temps du Mépris</title>
             <publicationDate></publicationDate>
-        </LivreIV>
-        <LivreV>
+        </Livre>
+        <Livre tome = "V">
             <title>Le Baptême du feu</title>
             <publicationDate></publicationDate>
-        </LivreV>
-        <LivreVI>
-            <title>La Tour de l'Hirondelle</title>
+        </Livre>
+        <Livre tome = "VI">
+            <title>La Tour de l&apos;Hirondelle</title>
             <publicationDate></publicationDate>
-        </LivreVI>
-        <LivreVII>
+        </Livre>
+        <Livre tome = "VII">
             <title>La Dame du Lac</title>
             <publicationDate></publicationDate>
-        </LivreVII> 
-</books>
+        </Livre> 
+    </books>
 </Witcher_Saga>
 
 <!-- Correction 1: Mettre les infos dans la balise saga, meilleure version-->

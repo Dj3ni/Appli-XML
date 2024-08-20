@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE musics SYSTEM "./doctypeDTD.dtd">
+
+<musics>
+    <music identifiant ="m1">
+        <title>We will rock you</title>
+        <artist is-group="true">Queen</artist>
+        <is-favorite note="4"/>
+    </music>
+    <music identifiant ="m2">
+        <title>Le monde est tout petit</title>
+    </music>
+    <music identifiant ="m3">
+        <title>Sous le vent</title>
+        <artist>Garou</artist>
+        <artist>Céline Dion</artist>
+    </music>
+</musics>

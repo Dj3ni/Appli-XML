@@ -1,0 +1,13 @@
+
+<!ELEMENT musics (album*, music+)>
+<!ELEMENT music (title, artist*, is-favorite?)>
+<!ELEMENT album (album-name)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT album-name (#PCDATA)>
+<!ELEMENT artist (#PCDATA)>
+<!ELEMENT is-favorite EMPTY>
+<!ATTLIST is-favorite note (0|1|2|3|4|5) #REQUIRED>
+<!ATTLIST artist is-group (true|false) #IMPLIED>
+<!ATTLIST music identifiant ID #REQUIRED>
+<!ATTLIST music previous-track IDREF #IMPLIED>
+<!ATTLIST music next-track IDREF #IMPLIED>

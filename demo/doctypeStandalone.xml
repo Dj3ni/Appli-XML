@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!DOCTYPE musics [
+    <!ELEMENT musics (album*, music+)>
+    <!ELEMENT music (title, artist*, is-favorite?)>
+    <!ELEMENT album (album-name)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT album-name (#PCDATA)>
+    <!ELEMENT artist (#PCDATA)>
+    <!ELEMENT is-favorite EMPTY>
+    <!ATTLIST is-favorite note (0|1|2|3|4|5) #REQUIRED>
+    <!ATTLIST artist is-group (true|false) #IMPLIED>
+    <!ATTLIST music identifiant ID #REQUIRED>
+    <!ATTLIST music previous-track IDREF #IMPLIED>
+    <!ATTLIST music next-track IDREF #IMPLIED>
+]>
+<musics>
+    <music identifiant ="m1">
+        <title>We will rock you</title>
+        <artist is-group="true">Queen</artist>
+        <is-favorite note="4"/>
+    </music>
+    <music identifiant ="m2">
+        <title>Le monde est tout petit</title>
+    </music>
+    <music identifiant ="m3">
+        <title>Sous le vent</title>
+        <artist>Garou</artist>
+        <artist>Céline Dion</artist>
+    </music>
+</musics>

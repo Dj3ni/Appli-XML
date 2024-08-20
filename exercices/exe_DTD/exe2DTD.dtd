@@ -1,0 +1,12 @@
+<!ELEMENT Repertory (Person+)>
+<!ELEMENT Person (Names, Gender, Address, PhoneNumbers, Emails, Birthday)>
+<!ELEMENT Names (Firstname+, Name)>
+<!ELEMENT Gender (h|f|a)>
+<!ELEMENT Address (Street, Number, postalCode, City, Country)>
+
+<!ELEMENT PhoneNumbers (PhoneNumber+)>
+<!ELEMENT PhoneNumber (#PCDATA)>
+<!ATTLIST PhoneNumber name (private|office|other) #REQUIRED>
+
+<!ELEMENT Emails (Email+)>
+<!ATTLIST Email name (private|office|other) #REQUIRED>

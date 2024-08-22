@@ -1,0 +1,49 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!-- We create the namespace to use the link to the schema doc -->
+<musics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="demoSchema.xsd">
+    
+    <album>
+        <album-title>Best of Queen</album-title>
+        <tracks>
+            <music identifiant ="m1">
+                <title>We will rock you</title>
+                <group name="Queen">
+                    <artist>Freddie Mercury</artist>
+                    <artist>Freddie Mercury</artist>
+                    <artist>Freddie Mercury</artist>
+                    <artist>Freddie Mercury</artist>
+                </group>
+                <is-favorite note="4"/>
+            </music>
+        </tracks>
+        <label name = "" contact=""></label>
+    </album>
+        
+    
+    <music identifiant ="m2">
+        <title>Le monde est tout petit</title>
+        <artist>Samuel Legrain</artist>
+    </music>
+
+    <music identifiant ="m3">
+        <title>Sous le vent</title>
+        <artist>Garou</artist>
+        <artist>Céline Dion</artist>
+    </music>
+
+    <single identifiant="m4">
+        <title>Seul</title>
+        <artist>Garou</artist>
+    </single>
+
+    <single identifiant="m5">
+        <title>Around the World</title>
+        <group name="Daft Punk">
+            <artist>Thomas Bangaltar</artist>
+            <artist>Guy</artist>
+        </group>        
+    </single>
+
+</musics>

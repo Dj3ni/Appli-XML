@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE livres SYSTEM "./exeLivreDTD.dtd">
+
+<livres>
+    <livre series-name="Harry Potter" tome="1">
+        <title>Harry Potter à l'école des Sorciers</title>
+        <publicationDate format="dd-mm-yyyy">20-08-2024</publicationDate>
+        <type>fantasy</type>
+        <author>
+            <firstname>J.K</firstname>
+            <name>Rowling</name>
+        </author>
+    </livre>
+    <livre>
+        <title>Léon le Moucheron</title>
+            <publicationDate format="dd-mm-yyyy">20-08-2024</publicationDate>
+            <type>Enfance</type>
+            <author>
+                <firstname>Samuel</firstname>
+                <name>Legrain</name>
+            </author>
+    </livre>
+</livres>

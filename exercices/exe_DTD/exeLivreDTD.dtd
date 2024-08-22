@@ -1,0 +1,20 @@
+<!ELEMENT livres (livre+)>
+
+<!ELEMENT livre (title, publicationDate, type, author)>
+<!-- We use CDATA because if differents series, there can be 5 book 1 etc so no Id!-->
+<!ATTLIST livre series-name CDATA #IMPLIED>
+<!ATTLIST livre tome CDATA #IMPLIED>
+
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT publicationDate (#PCDATA)>
+<!-- It does'nt understand "/" so we have to tell it what it must accept -->
+<!ATTLIST publicationDate format NOTATION (dmyFrench | year) #REQUIRED>
+<!NOTATION dmyFrench PUBLIC "dd-mm-yyyy">
+<!NOTATION year PUBLIC "yyyy">
+
+<!ELEMENT type (#PCDATA)>
+
+<!ELEMENT author (firstname,name)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT name (#PCDATA)>

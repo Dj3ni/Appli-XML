@@ -10,7 +10,7 @@ souhaite connaître les informations suivantes :
 ○ Un ou plusieurs numéros de téléphone (téléphone portable, fixe, bureau, etc.).
 ○ Une ou plusieurs adresses e-mail (adresse personnelle, professionnelle, etc.) -->
 
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml version="1.1" encoding="UTF-8" standalone="no" ?>
 
 <!DOCTYPE Repertory SYSTEM "./exe_DTD/exe2DTD.dtd">
 

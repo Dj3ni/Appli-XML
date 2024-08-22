@@ -4,9 +4,13 @@
 <!ELEMENT Gender (h|f|a)>
 <!ELEMENT Address (Street, Number, postalCode, City, Country)>
 
-<!ELEMENT PhoneNumbers (PhoneNumber+)>
-<!ELEMENT PhoneNumber (#PCDATA)>
-<!ATTLIST PhoneNumber name (private|office|other) #REQUIRED>
 
-<!ELEMENT Emails (Email+)>
-<!ATTLIST Email name (private|office|other) #REQUIRED>
+
+<!ELEMENT PhoneNumbers (PhoneNumber*)>
+<!ELEMENT PhoneNumber (#PCDATA)>
+<!-- To avoid repetition in rules, we use entities that works like a const-->
+<!ENTITY % attName "name CDATA #REQUIRED">
+<!ATTLIST PhoneNumber %attName;>
+
+<!ELEMENT Emails (Email*)>
+<!ATTLIST Email %attName;>

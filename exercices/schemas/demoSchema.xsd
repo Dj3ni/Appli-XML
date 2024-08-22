@@ -1,0 +1,103 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- Simple Type -->
+    <xsd:simpleType name ="T_Cote">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="5"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T-label-name">
+        <xsd:restriction base ="xsd:string">
+            <xsd:minLength value="3"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T-label-contact">
+        <xsd:restriction base ="xsd:string">
+            <xsd:pattern value="^[(a-z)(0-9)(.?!&)]{1,}@[{a-z}{0-9}]{1,}.[a-z]{2,3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Complex Type -->
+    <xsd:complexType name="T_musics">
+        <xsd:sequence>
+            <xsd:element ref="album" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_album">
+        <!-- Soit c'est tout, soit c'est rien, et pas d'ordre pour les balises  -->
+        <xsd:all>
+            <!-- On utilise ref quand on a dejà créé l'élément afin d'éviter de répéter cette création -->
+            <xsd:element ref = "album-title"/>
+            <xsd:element ref = "tracks"/>
+            <xsd:element ref = "label"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_tracks">
+        <xsd:sequence>
+            <xsd:element ref="music" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_music">
+        <xsd:sequence>
+            <xsd:element ref="title"/>
+                <xsd:choice>
+                    <xsd:element ref="artist" minOccurs="1" maxOccurs="unbounded"/>
+                    <xsd:element ref="group"/>
+                    <xsd:element ref="is-favorite" minOccurs="0"/>
+                </xsd:choice>
+        </xsd:sequence>
+        <xsd:attribute name ="identifiant" type="xsd:ID" use="required"/>
+        <xsd:attribute name ="previous-track" type="xsd:IDREF"/>
+        <xsd:attribute name ="next-track" type="xsd:IDREF"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_group">
+        <xsd:sequence>
+            <xsd:element ref="artist" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="name"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_is-favorite">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="note" type="T_Cote"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_label">
+        <xsd:complexContent>
+            <xsd:extension base="T-empty">
+                <xsd:attribute name="name" type="T-label-name"/>
+                <xsd:attribute name="contact" type="T-label-contact"></xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="T-empty">
+
+    </xsd:complexType>
+
+
+    <!-- Elements -->
+    <xsd:element name ="musics" type ="T_musics"/>
+    <xsd:element name="album" type="T_album"/>
+    <xsd:element name="album-title" type="xsd:string"/>
+    <xsd:element name="tracks" type ="T_tracks"/>
+    <xsd:element name="label" type="T_label"></xsd:element>
+    <xsd:element name="music" type="T_music"/>
+    <xsd:element name="title" type ="xsd:string"/>
+    <xsd:element name="artist" type ="xsd:string"/>
+    <xsd:element name="is-favorite" type ="T_is-favorite"/>
+    <xsd:element name="single" type="T_music"/>
+    <xsd:element name="group" type = "T_group"/>
+    
+
+</xsd:schema>

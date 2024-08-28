@@ -19,7 +19,7 @@
         <xsd:restriction base="xsd:string">
             <xsd:minLength value="4"/>
             <xsd:maxLength value="10"/>
-            <xsd:pattern value="([0-9]{4}) | (0-9){2}\/(0-9){2}/\([0-9]{4})"></xsd:pattern>
+            <xsd:pattern value="([0-9]{4}) | (0-9){2}\/(0-9){2}/\([0-9]{4})"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -47,7 +47,7 @@
     <xsd:element name="livres" type = "T_livres"/>
     <xsd:element name="livre" type = "T_livre"/>
     <xsd:element name="title" type = "T_title"/>
-    <xsd:element name="publicationDate" type="T_string_2_16"/>
+    <xsd:element name="publicationDate" type="T_date"/>
     <xsd:element name="type" type="T_string_2_16"/>
     <xsd:element name="author"/>
 

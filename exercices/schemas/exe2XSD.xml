@@ -1,0 +1,17 @@
+<!-- 
+- Tous les contenus de type string doivent avoirmin 2 caractères
+- Enum pour les genres H,F,non binaire, fluide, autre
+- nom, prénom numéro adresse: max 16 caractères
+- ville, pays: max 64 caractères
+- code postal: accepter uniquement entiers entre 1000 et 9999
+- numéros tel: si posible utiliser regex: commencer avec un + suivi de chiffres, soit que des chiffres
+- mail: regex 
+- attribut privé, pro en enumeration-->
+
+<?xml version="1.1" encoding="UTF-8"?>
+
+<repertory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="./exe2XSD.xsd">
+
+
+</repertory>

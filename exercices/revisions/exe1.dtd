@@ -1,0 +1,19 @@
+<!ELEMENT livres (livre+)>
+<!ELEMENT livre (titre, auteur+, editeur, prix, datePublication)>
+<!ATTLIST livre series-name CDATA #IMPLIED>
+<!ATTLIST livre tome CDATA #IMPLIED>
+
+<!ELEMENT auteur (noms)>
+<!ELEMENT noms (prenom, nom)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT nom (#PCDATA)>
+
+<!ELEMENT editeur (#PCDATA)>
+
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT prix (#PCDATA)>
+
+<!ELEMENT datePublication (#PCDATA)>
+<!ATTLIST datePublication format NOTATION (dmyFrench|year) #REQUIRED>
+<!NOTATION dmyFrench PUBLIC "dd/mm/yyyy">
+<!NOTATION year PUBLIC "yyyy">

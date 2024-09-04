@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- simple type -->
+    <xsd:simpleType name="T_number">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:minInclusive value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_price">
+        <xsd:restriction base="xsd:float">
+            <xsd:minInclusive value="0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_date">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="(?:(?:31(\/|-)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+        
+    <xsd:simpleType name="T_attr_">
+        <xsd:attribute name="format"/>
+    </xsd:simpleType>
+
+    <!-- Complex type -->
+    <xsd:complexType name="T_livres">
+        <xsd:sequence>
+            <xsd:element ref="livre"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_livre">
+        <xsd:sequence>
+            <xsd:element ref="titre" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="auteur" minOccurs="1" maxOccurs="unbounded"/>
+            <xsd:element ref="editeur"/>
+            <xsd:element ref="prix"/>
+            <xsd:element ref="datePublication"/>
+        </xsd:sequence>
+        <xsd:attribute name = "tome" type ="T_number"/>
+        <xsd:attribute name = "series-name" type ="xsd:string"/>
+    </xsd:complexType>
+    <xsd:complexType name="T_auteur">
+        <xsd:all>
+            <xsd:element ref= "noms"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_noms">
+        <xsd:all>
+            <xsd:element ref= "nom"/>
+            <xsd:element ref= "prenom"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <!-- Elements -->
+    <xsd:element name="livres" type= "T_livres"/>
+    <xsd:element name="livre" type ="T_livre"/>
+    <xsd:element name="titre" type ="xsd:string"/>
+    <xsd:element name="auteur" type ="T_auteur"/>
+    <xsd:element name="noms" type ="T_noms"/>
+    <xsd:element name="nom" type ="xsd:string"/>
+    <xsd:element name="prenom" type ="xsd:string"/>
+    <xsd:element name="editeur" type ="xsd:string"/>
+    <xsd:element name="prix" type ="T_price"/>
+    <xsd:element name="datePublication" type="T_date"/>
+    
+</xsd:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<!-- <!DOCTYPE livres SYSTEM "./exe1.dtd"> -->
+
+<livres xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="./exe1.xsd">
+
+    <livre series-name ="Harry Potter" tome ="1">
+        <titre>Harry Potter à l'école des sorciers</titre>
+        <auteur>
+            <noms>
+                <prenom>J.K.</prenom>
+                <nom>Rowling</nom>
+            </noms>
+        </auteur>
+        <editeur>Gallimard</editeur>
+        <prix>25.00</prix>
+        <datePublication format="year">2000</datePublication>
+    </livre>
+    <livre series-name ="Harry Potter" tome ="2">
+        <titre>Harry Potter et la chambre des secrets</titre>
+        <auteur>
+            <noms>
+                <prenom>J.K.</prenom>
+                <nom>Rowling</nom>
+            </noms>
+        </auteur>
+        <editeur>Gallimard</editeur>
+        <prix>25.00</prix>
+        <datePublication format="year">2002</datePublication>
+    </livre>
+
+</livres>

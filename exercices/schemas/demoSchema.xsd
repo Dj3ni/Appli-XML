@@ -16,7 +16,7 @@
 
     <xsd:simpleType name="T-label-contact">
         <xsd:restriction base ="xsd:string">
-            <xsd:pattern value="^[(a-z)(0-9)(.?!&)]{1,}@[{a-z}{0-9}]{1,}.[a-z]{2,3}"/>
+            <xsd:pattern value="^[(a-z)(0-9)(.?!)]{1,}@[{a-z}{0-9}]{1,}.[a-z]{2,3}"/>
         </xsd:restriction>
     </xsd:simpleType>
 
